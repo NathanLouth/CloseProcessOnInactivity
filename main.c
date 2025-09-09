@@ -110,7 +110,7 @@ BOOL GetSZFromRegistry(HKEY hRootKey, const wchar_t* subKey, const wchar_t* valu
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)
 {
-    const wchar_t* softwareKeyLocation = L"SOFTWARE\\CloseOnInactivity";
+    const wchar_t* softwareKeyLocation = L"SOFTWARE\\CloseProcessOnInactivity";
 
     DWORD autoRun = GetDWORDFromRegistry(HKEY_LOCAL_MACHINE, softwareKeyLocation, L"Run");
     if (autoRun != 1) return 1;
