@@ -20,11 +20,11 @@ ULONGLONG GetIdleTimeSeconds(void)
     return (tickCount - lastInputTick) / 1000;
 }
 
-BOOL KillProcessByName(const wchar_t* processName)
+BOOL CloseProcessByName(const wchar_t* processName)
 {
     HANDLE hSnap;
     PROCESSENTRY32 pe32;
-    BOOL killedAny = FALSE;
+    BOOL ClosedAny = FALSE;
 
     hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     if (hSnap == INVALID_HANDLE_VALUE)
@@ -43,14 +43,14 @@ BOOL KillProcessByName(const wchar_t* processName)
                 {
                     TerminateProcess(hProcess, 1);
                     CloseHandle(hProcess);
-                    killedAny = TRUE;
+                    ClosedAny = TRUE;
                 }
             }
         } while (Process32Next(hSnap, &pe32));
     }
 
     CloseHandle(hSnap);
-    return killedAny;
+    return ClosedAny;
 }
 
 DWORD GetDWORDFromRegistry(HKEY hRoot, const wchar_t* subKey, const wchar_t* valueName)
@@ -129,7 +129,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 
         if (idleTime >= (ULONGLONG)idleLimit)
         {
-            KillProcessByName(targetProcess);
+            CloseProcessByName(targetProcess);
         }
 
         Sleep(5000);
