@@ -169,9 +169,6 @@ Automatically terminate applications (such as CCTV monitoring software or databa
 "IdleTime"=dword:00000078   ; (120 seconds = 2 minutes)
 "TargetProcess"="cctv.exe"
 
-## 🛡️ Disclaimer
-This software forcibly terminates processes and may cause data loss if the target process has unsaved changes. Use with caution.
-
 ## 🔐 Security Warning
 
 This software performs operations that can pose **security and stability risks** if misused or misconfigured:
