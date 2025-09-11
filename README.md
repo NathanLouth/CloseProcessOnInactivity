@@ -192,7 +192,6 @@ This software performs operations that can pose **security and stability risks**
   - The executable files
   - The registry keys under `HKLM\SOFTWARE\CloseProcessOnInactivity`
 - Monitor for unauthorized changes to the configuration or executable files.
-- Consider code signing the binaries to prevent tampering.
 - Always test in a **non-production environment** before deployment.
 
 ## 📄 License
