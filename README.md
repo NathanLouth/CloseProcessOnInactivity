@@ -91,9 +91,6 @@ wtsapi32.lib
 userenv.lib
 shlwapi.lib
 
-yaml
-Copy code
-
 Use a tool like Visual Studio or `cl.exe` with appropriate flags to build each `.c` file.
 
 ---
@@ -127,7 +124,7 @@ Use a tool like Visual Studio or `cl.exe` with appropriate flags to build each `
     Use `sc.exe` or a service installer tool:
 
     ```cmd
-    sc create CloseProcessOnInactivityService binPath= "C:\Path\To\Service.exe"
+    sc create CloseProcessOnInactivityService binPath= "C:\Program Files\CloseProcessOnInactivity\CloseProcessOnInactivityService.exe"
     ```
 
 4. **Start the service**:
